@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 .App {
   text-align: center;
+  background: rgb(207,22,100);
+  background: linear-gradient(90deg, rgba(52,22,54,1) 0%, rgba(144,46,117,1) 100%);
+  height: 100vh; 
 }
 
 .App-logo {
@@ -28,11 +33,64 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 72px;
+  margin: 20px;
+}
+
+
+
+.wish-area {
+  background: rgba(0,0,0,0.7);
+  width: 693px;
+  margin: auto;
+  padding: 30px 20px;
+  border-radius: 15px;
+  min-height: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.wishlist-title {
+  padding-top: 100px;
+}
+
+.text-box {
+  width: 631px;
+  height: 50px;
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  background: rgba(0,0,0,0.33);
+  border: 0px;
+  color: rgb(204, 204, 204);
+}
+
+.wish-list {
+
+}
+
+.wish-card{
+  display: flex;
+  background: linear-gradient(90deg, rgba(207,22,100,1) 0%, rgba(123,153,232,1) 100%);
+  justify-content: space-between;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.wish-icons {
+  display: flex;
+}
+
+.card-icons {
+  width: 37px;
+  padding: 15px;
+}
+
+.card-text {
+  color: white;
+  padding-left: 10px;
 }
