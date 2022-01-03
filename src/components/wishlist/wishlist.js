@@ -15,30 +15,7 @@ import axios from 'axios'
     //         wishes: []
     //     }
     // }
-    
-    // componentDidMount() {
-    //     axios.get('http://localhost:4000/app/wishes')
-    //     .then((response) => {
-    //         this.setState({ wishes: response.data })
-    //     })
-    //     .catch(function (error) {
-    //     console.log(error)
-    //     })
-    // }
 
-    // wish() {
-    //     return this.state.wishes.map((data) => {
-    //         return (
-    //         <Wishes
-    //             record={data}
-    //             key={data._id}
-    //         />
-    //         )
-    //     })
-    //   }
-
-
-    
 
 class Wishlist extends Component {
     constructor(){
@@ -68,6 +45,26 @@ class Wishlist extends Component {
         window.location = '/'
     }
     
+    // componentDidMount() {
+    //     axios.get('http://localhost:4000/app/wishes')
+    //     .then((response) => {
+    //         this.setState({ wishes: response.data })
+    //     })
+    //     .catch(function (error) {
+    //     console.log(error)
+    //     })
+    // }
+
+    // wish() {
+    //     return this.state.wishes.map((data) => {
+    //         return (
+    //         <Wishes
+    //             record={data}
+    //             key={data._id}
+    //         />
+    //         )
+    //     })
+    //     }
 
     render(){
     return (
@@ -88,7 +85,7 @@ class Wishlist extends Component {
             <div className="wish-list">
                 <div className="wish-card">
                     <div className="card-text">
-                        <h2>My wish item here</h2>
+                        <h2>Some text here</h2>
                     </div>
                     <div className="wish-icons">
                         <div>
