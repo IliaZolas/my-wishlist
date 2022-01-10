@@ -23,4 +23,8 @@ recordRoutes.get('/wishes', (request, response) => {
     Wishes.find().then(data => response.json(data))
 })
 
+recordRoutes.delete('/delete/:id', (request, response) => {
+    Wishes.findByIdAndRemove(request.params.id)
+})
+
 module.exports = recordRoutes

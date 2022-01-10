@@ -4,6 +4,10 @@ const newWishTemplate = new mongoose.Schema ({
     wish:{
         type:String,
         required:true
+    },
+    date:{
+        type:Date,
+        default:Date.now
     }
 
 })
