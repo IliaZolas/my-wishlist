@@ -5,17 +5,62 @@ import deleteImage from './img/delete.svg'
 import axios from 'axios'
 
 
-// const Wishes = (props) => (
-//     <div>{props.record.wish}</div>
-//     )
+const Wishes = (props) => (
+    <div className="wish-card">
+        <div className="card-text">
+            <h2>{props.record.wish}</h2>
+        </div>
+        <div className="wish-icons">
+            <div>
+                <img src={editImage} className="card-icons" alt="edit" />
+            </div>
+            <div>
+                <img src={deleteImage} className="card-icons" alt="edit" />
+            </div>
+        </div>
+    </div>
+    )
 
-    // constructor(props) {
-    //     super(props)
-    //     this.state = { 
-    //         wishes: []
-    //     }
-    // }
 
+class List extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { 
+            wishes: []
+        }
+    }
+
+
+    componentDidMount() {
+        axios.get('http://localhost:4000/app/wishes')
+        .then((response) => {
+            this.setState({ wishes: response.data })
+        })
+        .catch(function (error) {
+        console.log(error)
+        })
+    }
+
+    listWishes() {
+        return this.state.wishes.map((data) => {
+            return (
+            <Wishes
+                record={data}
+                key={data._id}
+            />
+            )
+        })
+    }
+
+    render(){
+        return (
+                <div>
+                    {this.listWishes()}
+                </div>
+        )
+    }
+}
 
 class Wishlist extends Component {
     constructor(){
@@ -44,27 +89,6 @@ class Wishlist extends Component {
         
         window.location = '/'
     }
-    
-    // componentDidMount() {
-    //     axios.get('http://localhost:4000/app/wishes')
-    //     .then((response) => {
-    //         this.setState({ wishes: response.data })
-    //     })
-    //     .catch(function (error) {
-    //     console.log(error)
-    //     })
-    // }
-
-    // wish() {
-    //     return this.state.wishes.map((data) => {
-    //         return (
-    //         <Wishes
-    //             record={data}
-    //             key={data._id}
-    //         />
-    //         )
-    //     })
-    //     }
 
     render(){
     return (
@@ -83,19 +107,7 @@ class Wishlist extends Component {
                 </div>
             </form>
             <div className="wish-list">
-                <div className="wish-card">
-                    <div className="card-text">
-                        <h2>Some text here</h2>
-                    </div>
-                    <div className="wish-icons">
-                        <div>
-                            <img src={editImage} className="card-icons" alt="edit" />
-                        </div>
-                        <div>
-                            <img src={deleteImage} className="card-icons" alt="edit" />
-                        </div>
-                    </div>
-                </div>
+                <List />
             </div>
         </div>
     )
